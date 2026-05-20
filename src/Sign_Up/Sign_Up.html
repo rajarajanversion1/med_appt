@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="./Sign_Up.css">
+</head>
+
+<body>
+  <div class="outerbody">
+
+    <form class="signup-form">
+
+      <h1>Sign Up</h1>
+
+      <h3>
+        Already a member?
+        <a href="">Login</a>
+      </h3>
+
+      <div class="form-group">
+        <label for="role">Role</label>
+
+        <select id="role" name="role" required>
+          <option value="">Select Role</option>
+          <option value="Cardiologist">Cardiologist</option>
+          <option value="Neurologist">Neurologist</option>
+          <option value="Dermatologist">Dermatologist</option>
+          <option value="Pediatrician">Pediatrician</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Full Name</label>
+
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your full name"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="Enter your phone number"
+          pattern="[0-9]{10}"
+          maxlength="10"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+          minlength="6"
+          maxlength="16"
+          pattern="^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{6,16}$"
+          required
+        >
+      </div>
+
+      <button type="submit" class="signup-btn">
+        Submit
+      </button>
+
+      <button type="reset" class="reset-btn">
+        Reset
+      </button>
+
+    </form>
+
+  </div>
+</body>
+</html>

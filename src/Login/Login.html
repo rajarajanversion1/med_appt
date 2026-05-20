@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="./Login.css">
+</head>
+<body>
+  <div class="outerlogbody">
+    <form class="login-form">
+      <h1>Login</h1>
+
+      <h3>
+        Are you a member?
+        <a href="">Sign Up Here</a>
+      </h3>
+
+      <div class="login-group">
+        <label for="email">Email</label>
+
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+          required
+        >
+      </div>
+
+      <div class="login-group">
+        <label for="password">Password</label>
+
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+          minlength="6"
+          maxlength="16"
+          pattern="^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{6,16}$"
+          required
+        >
+      </div>
+
+      <button type="submit" class="login-btn">
+        Login
+      </button>
+
+      <button type="reset" class="reset-btn">
+        Reset
+      </button>
+
+      <div class="login-group">
+        <a href="">Forget Password?</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,16 +1,93 @@
-# React + Vite
+# Medical Appointment Booking
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
 
-Currently, two official plugins are available:
+Medical Appointment Booking is a healthcare web application designed to help patients connect with doctors online. The platform allows users to search doctors, book appointments, manage profiles, and provide consultation feedback.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project is developed as part of the StayHealthy digital healthcare initiative to improve healthcare accessibility in remote areas.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+### Medical Appointments Online
+- Book appointments with doctors
+- View doctor availability
+- Cancel or modify appointments
+- Online consultation support
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Doctor Listing
+- Search doctors by specialty or name
+- View doctor details and ratings
+- Browse available specialists
+
+### Consultation Feedback
+- Provide ratings and reviews
+- Share consultation experience
+
+### Profile Management
+- User registration and login
+- Update personal information
+- Manage medical details
+
+### Navigation
+- Responsive and user-friendly interface
+- Easy navigation with minimal clicks
+
+---
+
+## Project Structure
+
+```bash
+src/
+ ├── components/
+ ├── pages/
+ ├── services/
+ ├── hooks/
+ ├── assets/
+ └── App.tsx
+```
+
+---
+
+## Installation
+
+1. Clone the repository
+
+```bash
+git clone <repository-url>
+```
+
+2. Navigate to the project folder
+
+```bash
+cd grihf-frontend_capstone_starter_code
+```
+
+3. Install dependencies
+
+```bash
+npm install
+```
+
+4. Start development server
+
+```bash
+npm run dev
+```
+
+---
+
+## Future Enhancements
+
+- Video consultations
+- Appointment reminders
+- Medical record downloads
+- Admin dashboard
+- Health tips and news feeds
+
+---
+
+## Author
+
+Frontend Capstone Project – Medical Appointment Booking

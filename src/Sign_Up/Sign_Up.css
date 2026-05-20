@@ -1,0 +1,155 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:linear-gradient(to right,#e0f2fe,#f4f7fb);
+  min-height:100vh;
+}
+
+.outerbody{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+a{
+  text-decoration:none;
+  color:#2563eb;
+  position:relative;
+}
+
+a::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:-2px;
+  width:0;
+  height:2px;
+  background:#2563eb;
+  transition:0.3s ease-in-out;
+  transform:translateX(-50%);
+}
+
+a:hover::after{
+  width:100%;
+}
+
+.signup-form{
+  width:400px;
+  background:white;
+  padding:35px;
+  border-radius:16px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+  transition:transform 0.3s ease;
+}
+
+.signup-form:hover{
+  transform:translateY(-5px);
+}
+
+.signup-form h1{
+  text-align:center;
+  margin-bottom:10px;
+  color:#1e293b;
+}
+
+.signup-form h3{
+  text-align:center;
+  margin-bottom:25px;
+  font-size:14px;
+  font-weight:normal;
+  color:#64748b;
+}
+
+.form-group{
+  display:flex;
+  flex-direction:column;
+  margin-bottom:18px;
+}
+
+.form-group label{
+  margin-bottom:8px;
+  font-weight:600;
+  color:#334155;
+}
+
+.form-group input,
+.form-group select{
+  padding:12px;
+  border:1px solid #cbd5e1;
+  border-radius:8px;
+  font-size:14px;
+  transition:0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+  outline:none;
+  border-color:#2563eb;
+  box-shadow:0 0 5px rgba(37,99,235,0.4);
+}
+
+.signup-btn,
+.reset-btn{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:8px;
+  color:white;
+  cursor:pointer;
+  margin-top:10px;
+  font-size:15px;
+  transition:background 0.3s ease,transform 0.3s ease;
+  transition-delay:0.1s;
+}
+
+.signup-btn{
+  background:#2563eb;
+}
+
+.signup-btn:hover{
+  background:#1d4ed8;
+  transform:scale(1.02);
+}
+
+.reset-btn{
+  background:#ef4444;
+}
+
+.reset-btn:hover{
+  background:#dc2626;
+  transform:scale(1.02);
+}
+
+@media screen and (max-width:768px){
+
+  .signup-form{
+    width:100%;
+    max-width:350px;
+    padding:25px;
+  }
+
+  .signup-form h1{
+    font-size:28px;
+  }
+
+  .signup-form h3{
+    font-size:13px;
+  }
+
+  .form-group input,
+  .form-group select{
+    padding:10px;
+  }
+
+  .signup-btn,
+  .reset-btn{
+    padding:10px;
+  }
+}
