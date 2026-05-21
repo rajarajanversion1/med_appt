@@ -1,99 +1,186 @@
-import './Sign_Up.css'
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-export default function Sign_Up(){
-    return(
-        <>
-        <div className="outerbody">
+import "./Sign_Up.css";
 
-    <form className="signup-form">
+export default function Sign_Up() {
 
-      <h1>Sign Up</h1>
+  const navigate = useNavigate();
 
-      <h3>
-        Already a member?
-        <a href="">Login</a>
-      </h3>
+  const [credentials, setCredentials] = useState({
+    role: "",
+    name: "",
+    phone: "",
+    email: "",
+    password: "",
+  });
 
-      <div className="form-group">
-        <label for="role">Role</label>
+  const handleSubmit = async (e) => {
 
-        <select id="role" name="role" required>
-          <option value="">Select Role</option>
-          <option value="Cardiologist">Cardiologist</option>
-          <option value="Neurologist">Neurologist</option>
-          <option value="Dermatologist">Dermatologist</option>
-          <option value="Pediatrician">Pediatrician</option>
-        </select>
-      </div>
+    e.preventDefault();
 
-      <div className="form-group">
-        <label for="name">Full Name</label>
+    const response = await fetch("http://localhost:8181/api/auth/register", {
 
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Enter your full name"
-          required
-        />
-      </div>
+      method: "POST",
 
-      <div className="form-group">
-        <label for="phone">Phone Number</label>
+      headers: {
+        "Content-Type": "application/json",
+      },
 
-        <input
-        type="tel"
-        id="phone"
-        name="phone"
-        placeholder="Enter your phone number"
-        pattern="[0-9]{10}"
-        maxLength={10}
-        onInput={(e) => {
-            e.target.value = e.target.value.replace(/[^0-9]/g, '');
-        }}
-        required
-        />
-      </div>
+      body: JSON.stringify({
+        role: credentials.role,
+        name: credentials.name,
+        phone: credentials.phone,
+        email: credentials.email,
+        password: credentials.password,
+      }),
+    });
 
-      <div className="form-group">
-        <label for="email">Email Address</label>
+    const json = await response.json();
 
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Enter your email"
-          pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
-          required
-        />
-      </div>
+    if (json.success || json.authtoken) {
 
-      <div className="form-group">
-        <label for="password">Password</label>
+      sessionStorage.setItem("email", credentials.email);
 
-        <input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="Enter your password"
-          minlength="6"
-          maxlength="16"
-          pattern="^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{6,16}$"
-          required
-        />
-      </div>
+      alert("Signup Successful");
 
-      <button type="submit" className="signup-btn">
-        Submit
-      </button>
+      navigate("/");
 
-      <button type="reset" className="reset-btn">
-        Reset
-      </button>
+      window.location.reload();
 
-    </form>
+    } else {
 
-  </div>
-        </>
-    )
+      alert(json.error || "Signup failed");
+    }
+  };
+
+  const onChange = (e) => {
+
+    setCredentials({
+      ...credentials,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  return (
+    <div className="outerbody">
+
+      <form className="signup-form" onSubmit={handleSubmit}>
+
+        <h1>Sign Up</h1>
+
+        <h3>
+          Already a member?
+          <Link to="/login"> Login</Link>
+        </h3>
+
+        <div className="form-group">
+
+          <label htmlFor="role">Role</label>
+
+          <select
+            id="role"
+            name="role"
+            required
+            value={credentials.role}
+            onChange={onChange}
+          >
+
+            <option value="">Select Role</option>
+
+            <option value="Cardiologist">Cardiologist</option>
+
+            <option value="Neurologist">Neurologist</option>
+
+            <option value="Dermatologist">Dermatologist</option>
+
+            <option value="Pediatrician">Pediatrician</option>
+
+          </select>
+
+        </div>
+
+        <div className="form-group">
+
+          <label htmlFor="name">Full Name</label>
+
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your full name"
+            required
+            value={credentials.name}
+            onChange={onChange}
+          />
+
+        </div>
+
+        <div className="form-group">
+
+          <label htmlFor="phone">Phone Number</label>
+
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Enter your phone number"
+            pattern="[0-9]{10}"
+            maxLength={10}
+            value={credentials.phone}
+            onChange={onChange}
+            onInput={(e) => {
+              e.target.value = e.target.value.replace(/[^0-9]/g, "");
+            }}
+            required
+          />
+
+        </div>
+
+        <div className="form-group">
+
+          <label htmlFor="email">Email Address</label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+            value={credentials.email}
+            onChange={onChange}
+          />
+
+        </div>
+
+        <div className="form-group">
+
+          <label htmlFor="password">Password</label>
+
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            minLength="6"
+            maxLength="16"
+            required
+            value={credentials.password}
+            onChange={onChange}
+          />
+
+        </div>
+
+        <button type="submit" className="signup-btn">
+          Submit
+        </button>
+
+        <button type="reset" className="reset-btn">
+          Reset
+        </button>
+
+      </form>
+
+    </div>
+  );
 }
