@@ -5,15 +5,18 @@ import Navbar from './component/Navbar/Navbar.jsx'
 import Sign_Up from './component/Sign_Up/Sign_Up.jsx'
 import Login from './component/Login/Login.jsx'
 import Home from './component/Home.jsx'
+import GetStarted from './component/getstarted/getstarted.jsx'
+import InstantConsultation from './component/InstantConsultationBooking/InstantConsultation.jsx'
 
 function App() {
   return (
     <>
       <Router>
         <Navbar />
-
         <Routes>
           <Route path="/" element={<Home />}></Route>
+          <Route path="/getstarted" element={<GetStarted />}></Route>
+          <Route path="/instant-consultation" element={<InstantConsultation />}></Route>
           <Route path="/signup" element={<Sign_Up />} />
           <Route path="/login" element={<Login />} />
         </Routes>

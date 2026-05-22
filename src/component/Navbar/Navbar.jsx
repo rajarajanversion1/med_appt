@@ -57,56 +57,42 @@ const Navbar = () => {
 
     }, [isLoggedIn]);
   return (
-    <nav>
-      <div className="nav__logo">
-        <Link to="/">
-        StayHealthy <i style={{color:'#2190FF'}} className="fa fa-user-md"></i></Link>
-        <span>.</span>
-      </div>
-      <div className="nav__icon" onClick={handleClick}>
-        <i className={click ? "fa fa-times" : "fa fa-bars"}></i>
-      </div>
-      <ul className={click ? 'nav__links active' : 'nav__links'}>
-        <li className="link">
-          <Link to="/">Home</Link>
-        </li>
-        <li className="link">
-          <Link to="/search/doctors">Appointments</Link>
-        </li>
-        <li className="link">
-          <Link to="/healthblog">Health Blog</Link>
-        </li>
-        <li className="link">
-         <Link to="/reviews">Reviews</Link>
-        </li>
-        {isLoggedIn?(
-          <>
-          <li className="link username">
-            {username}
-          </li>
+        <nav>
+          {/* LEFT */}
+          <div className="nav__left">
+            <div className="nav__logo">
+              <Link to="/" className="logo-link">
+                <span>StayHealthy</span>
+                <img src="./doctorlogo.png" alt="logo" />
+              </Link>
+            </div>
+          </div>
 
-          <li className="link">
-            <button className="btn2" onClick={handleLogout}>
-              Logout
-            </button>
-          </li>
-          </>
-        ) : (
-          <>
-            <li className="link">
-              <Link to="/signup">
-                <button className="btn1">Sign Up</button>
-              </Link>
-            </li>
-            <li className="link">
-              <Link to="/login">
-                <button className="btn1">Login</button>
-              </Link>
-            </li>
-          </>
-        )}
-      </ul>
-    </nav>
+          <ul className={click ? "nav__links active" : "nav__links"}>
+            <li className="link"><Link to="/">Home</Link></li>
+            <li className="link"><Link to="/search/doctors">Appointments</Link></li>
+            <li className="link"><Link to="/healthblog">Health Blog</Link></li>
+            <li className="link"><Link to="/reviews">Reviews</Link></li>
+          </ul>
+
+          <div className="nav__right">
+            {isLoggedIn ? (
+              <>
+                <span className="username">{username}</span>
+                <button className="btn2" onClick={handleLogout}>Logout</button>
+              </>
+            ) : (
+              <>
+                <Link to="/signup"><button className="btn1">Sign Up</button></Link>
+                <Link to="/login"><button className="btn1">Login</button></Link>
+              </>
+            )}
+          </div>
+
+          <div className="nav__icon" onClick={handleClick}>
+            <i className={click ? "fa fa-times" : "fa fa-bars"}></i>
+          </div>
+        </nav>
   );
 };
 
