@@ -7,6 +7,8 @@ import Login from './component/Login/Login.jsx'
 import Home from './component/Home.jsx'
 import GetStarted from './component/getstarted/getstarted.jsx'
 import InstantConsultation from './component/InstantConsultationBooking/InstantConsultation.jsx'
+import AppointmentFormIC from './component/InstantConsultationBooking/AppointmentFormIC/AppointmentFormIC.jsx'
+import BookingConsultation from './component/BookingConsultation.jsx';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/instant-consultation" element={<InstantConsultation />}></Route>
           <Route path="/signup" element={<Sign_Up />} />
           <Route path="/login" element={<Login />} />
+          <Route path='/search/doctors' element={<AppointmentFormIC/>}></Route>
+          <Route path="/booking-consultation" element={<BookingConsultation />}/>
         </Routes>
 
       </Router>
