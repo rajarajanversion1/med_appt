@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ReportsLayout.css";
+import jsPDF from "jspdf";
 
 const ReportsLayout = () => {
   const [reports] = useState([
@@ -21,25 +22,21 @@ const ReportsLayout = () => {
     );
   };
 
-  const handleDownloadReport = (report) => {
-    const content = `
-Report Details
---------------
-Doctor: ${report.doctorName}
-Speciality: ${report.speciality}
-Generated: ${new Date().toLocaleString()}
-    `;
+const handleDownloadReport = (report) => {
+  const doc = new jsPDF();
 
-    const blob = new Blob([content], { type: "text/plain" });
-    const url = URL.createObjectURL(blob);
+  doc.setFont("helvetica");
+  doc.setFontSize(16);
 
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = `${report.doctorName}_report.txt`;
-    link.click();
+  doc.text("Report Details", 20, 20);
 
-    URL.revokeObjectURL(url);
-  };
+  doc.setFontSize(12);
+  doc.text(`Doctor: ${report.doctorName}`, 20, 40);
+  doc.text(`Speciality: ${report.speciality}`, 20, 50);
+  doc.text(`Generated: ${new Date().toLocaleString()}`, 20, 60);
+
+  doc.save(`${report.doctorName}_report.pdf`);
+};
 
   return (
     <div className="reports-container">
