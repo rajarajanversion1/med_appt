@@ -1,0 +1,70 @@
+.profile-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+/* CARD */
+.profile-details,
+.profile-container form {
+  width: 350px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* HEADING */
+.profile-details h1 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* TEXT */
+.profile-details p {
+  margin: 8px 0;
+  font-size: 15px;
+  color: #444;
+}
+
+/* LABEL */
+.profile-container label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* INPUT */
+.profile-container input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.profile-container input:focus {
+  border-color: #2563eb;
+}
+
+/* BUTTON */
+.profile-container button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.profile-container button:hover {
+  background: #1d4ed8;
+}

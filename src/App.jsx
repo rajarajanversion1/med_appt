@@ -6,12 +6,14 @@ import Sign_Up from './component/Sign_Up/Sign_Up.jsx'
 import Login from './component/Login/Login.jsx'
 import Home from './component/Home.jsx'
 import GetStarted from './component/getstarted/getstarted.jsx'
+import Profile from "./component/ProfileCard/Profile";
 import InstantConsultation from './component/InstantConsultationBooking/InstantConsultation.jsx'
 import AppointmentFormIC from './component/InstantConsultationBooking/AppointmentFormIC/AppointmentFormIC.jsx'
 import BookingConsultation from './component/BookingConsultation.jsx';
 import Notification from './component/Notification/Notification.jsx'
 import ReviewForm from './component/ReviewForm/ReviewForm.jsx';
 import ReviewFormApp from './component/ReviewFormApp.jsx';
+import ReportsLayout from "./component/ReportsLayout/ReportsLayout";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/getstarted" element={<GetStarted />}></Route>
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/reports" element={<ReportsLayout />} />
           <Route path="/instant-consultation" element={<InstantConsultation />}></Route>
           <Route path="/signup" element={<Sign_Up />} />
           <Route path="/login" element={<Login />} />
