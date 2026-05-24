@@ -1,0 +1,52 @@
+.review-container {
+  max-width: 1000px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+th {
+  background: #2563eb;
+  color: white;
+}
+
+button {
+  padding: 6px 10px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+.popup-form {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+}
+
+.popup-form input,
+.popup-form textarea {
+  width: 100%;
+  margin: 5px 0;
+  padding: 6px;
+}
+
+.rating {
+  margin: 10px 0;
+}

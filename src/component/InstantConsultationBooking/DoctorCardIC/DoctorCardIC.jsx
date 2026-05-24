@@ -19,26 +19,51 @@ const DoctorCardIC = ({
     setShowModal(true);
   };
 
-  const handleCancel = (appointmentId) => {
+const handleCancel = (appointmentId) => {
 
-    const updatedAppointments = appointments.filter(
-      (appointment) => appointment.id !== appointmentId
-    );
+  const updatedAppointments = appointments.filter(
+    (appointment) => appointment.id !== appointmentId
+  );
 
-    setAppointments(updatedAppointments);
+  setAppointments(updatedAppointments);
+
+  // remove notification data
+  localStorage.removeItem(name);
+};
+
+const handleFormSubmit = (appointmentData) => {
+
+  const newAppointment = {
+    id: uuidv4(),
+
+    name: appointmentData.name,
+    phoneNumber: appointmentData.phoneNumber,
+    appointmentDate: appointmentData.appointmentDate,
+    timeSlot: appointmentData.timeSlot,
+    cancelled: false
   };
 
-  const handleFormSubmit = (appointmentData) => {
+  setAppointments([...appointments, newAppointment]);
 
-    const newAppointment = {
-      id: uuidv4(),
-      ...appointmentData,
-    };
+  // store doctor details
+  localStorage.setItem(
+    'doctorData',
+    JSON.stringify({
+      name,
+      speciality,
+      experience,
+      ratings
+    })
+  );
 
-    setAppointments([...appointments, newAppointment]);
+  // store appointment details
+  localStorage.setItem(
+    name,
+    JSON.stringify(newAppointment)
+  );
 
-    setShowModal(false);
-  };
+  setShowModal(false);
+};
 
   return (
 

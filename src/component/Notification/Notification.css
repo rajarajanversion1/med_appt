@@ -1,0 +1,33 @@
+.notification-container {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.appointment-card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 10px;
+  width: 280px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.appointment-card__title {
+  margin-bottom: 10px;
+}
+
+.close-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px;
+  border: none;
+  background: #ef4444;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background: #dc2626;
+}
