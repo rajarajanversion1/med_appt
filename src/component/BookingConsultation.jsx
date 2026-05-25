@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './Instantconsultationbooking/InstantConsultation.css';
+import './InstantConsultationbooking/InstantConsultation.css';
 import { useSearchParams } from 'react-router-dom';
 
 import FindDoctorSearchIC from '../component/InstantConsultationBooking/FindDoctorSearchIC/FindDoctorSearchIC';
