@@ -1,4 +1,4 @@
-import "./getstarted.css";
+import "./GetStarted.css";
 import { Link } from "react-router-dom";
 
 const services = [

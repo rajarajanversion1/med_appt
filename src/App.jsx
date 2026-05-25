@@ -5,7 +5,7 @@ import Navbar from './component/Navbar/Navbar.jsx'
 import Sign_Up from './component/Sign_Up/Sign_Up.jsx'
 import Login from './component/Login/Login.jsx'
 import Home from './component/Home.jsx'
-import GetStarted from './component/getstarted/getstarted.jsx'
+import GetStarted from './component/GetStarted/GetStarted.jsx'
 import Profile from "./component/ProfileCard/Profile";
 import InstantConsultation from './component/InstantConsultationBooking/InstantConsultation.jsx'
 import AppointmentFormIC from './component/InstantConsultationBooking/AppointmentFormIC/AppointmentFormIC.jsx'
