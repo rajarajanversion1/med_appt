@@ -1,0 +1,6 @@
+https://github.com/rajarajanversion1/med_appt/blob/main/src/component/Sign_Up/Sign_Up.jsx
+https://github.com/rajarajanversion1/med_appt/blob/main/src/component/Login/Login.jsx
+https://github.com/rajarajanversion1/med_appt/blob/main/src/component/Navbar/Navbar.jsx
+https://github.com/rajarajanversion1/med_appt/blob/main/src/component/InstantConsultationBooking/AppointmentFormIC/AppointmentFormIC.jsx
+https://github.com/rajarajanversion1/med_appt/blob/main/src/component/InstantConsultationBooking/FindDoctorSearchIC/FindDoctorSearchIC.jsx
+https://github.com/rajarajanversion1/med_appt/blob/main/src/component/InstantConsultationBooking/DoctorCardIC/DoctorCardIC.jsx

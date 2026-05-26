@@ -72,11 +72,12 @@ const ReviewForm = () => {
                 {/* FORM INJECTION */}
                 {activeIndex === index && !reviews[index]?.submitted && (
 
-                  <GiveReviews
-                    doctor={doc}
-                    onClose={() => setActiveIndex(null)}
-                    onSubmit={(data) => handleSubmit(index, data)}
-                  />
+                <GiveReviews
+                  doctor={doc}
+                  onSubmit={(data) => handleSubmit(index, data)}
+                  onClose={() => setActiveIndex(null)}
+                  submitted={reviews[index]?.submitted}
+                />
 
                 )}
 

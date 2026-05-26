@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const GiveReviews = ({ doctor, onSubmit, onClose }) => {
+const GiveReviews = ({ doctor, onSubmit, onClose, submitted }) => {
 
   const [name, setName] = useState('');
   const [review, setReview] = useState('');
@@ -64,7 +64,10 @@ const GiveReviews = ({ doctor, onSubmit, onClose }) => {
 
       </div>
 
-      <button onClick={handleSubmit}>
+      <button
+        onClick={handleSubmit}
+        disabled={submitted}
+      >
         Submit
       </button>
 
